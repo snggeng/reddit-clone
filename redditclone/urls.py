@@ -21,6 +21,6 @@ from post import urls as posturls
 
 urlpatterns = [
     url(r'^$', views.homepage),
-    url(r'^post/$', include(posturls)),
+    url(r'^post/', include(posturls)),
     url(r'^admin/', admin.site.urls),
 ]

@@ -12,5 +12,14 @@
 
     <h3>Hello, {{ name }}</h3>
     <h3>Today is {{ day }}</h3>
+
+    {% block body %}
+      {% for p in posts %}
+        <div>
+          <a href="{{ p.link }}"><h2>{{ p.title }}</h2></a>
+          <h3>{{ p.score }}</h3>
+        </div>
+      {% endfor %}
+    {% endblock %}
   </body>
 </html>
