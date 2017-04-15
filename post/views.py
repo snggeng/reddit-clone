@@ -2,13 +2,24 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.http import HttpResponseNotFound, HttpResponse
 from forms import PostForm
+from models import Post
 # Create your views here.
 
 # Post creation utilities
 
 def createpost(request):
     return render_form(request, "createpost.html", "post/create", PostForm)
+
+def upvote(request, pid="2"):
+    try:
+        post = Post.objects.get(id=int(pid))
+        post.score += 1
+        post.save()
+        return HttpResponse("new score: " + str(post.score))
+    except Exception:
+       return HttpResponseNotFound("Could not find post with id " + pid)
 
 def generate_form_context(form, is_form, action, old_context={}):
     old_context['form'] = form

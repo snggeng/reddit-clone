@@ -4,5 +4,5 @@ import views
 
 urlpatterns = [
     url(r'create$', views.createpost),
-    url(r'upvote/(?<pid>\d{0,4})', views.upvote),
+    url(r'upvote/(?P<pid>\d{1,4})$', views.upvote),
 ]
