@@ -2,10 +2,14 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-
+from forms import PostForm
 # Create your views here.
 
 # Post creation utilities
+
+def createpost(request):
+    return render_form(request, "createpost.html", "post/create", PostForm)
+
 def generate_form_context(form, is_form, action, old_context={}):
     old_context['form'] = form
     old_context['is_form'] = is_form
