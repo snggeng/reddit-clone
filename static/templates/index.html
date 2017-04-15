@@ -15,7 +15,7 @@
 
     {% block body %}
       {% for p in posts %}
-        <div>
+        <div class="post">
           <a href="{{ p.link }}"><h2>{{ p.title }}</h2></a>
           <h3>{{ p.score }}</h3>
         </div>

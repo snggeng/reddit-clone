@@ -1,3 +1,5 @@
-html {
-  background: blue;
+.post {
+  margin: 20px;
+  background: lightblue;
+  font-family: Arial;
 }
