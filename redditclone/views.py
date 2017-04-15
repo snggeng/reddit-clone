@@ -3,5 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def homepage(request):
-    return render(request, "index.html")
+    context = {"name": "Yoyo",
+                "day": "Friday"}
+    return render(request, "index.html", context)
     # return HttpResponse("Hello World")
