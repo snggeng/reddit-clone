@@ -1,4 +1,7 @@
-from django.conf.urls import urls
+from django.conf.urls import url
+
+import views
+
 urlpatterns = [
-    url(r'create$')
+    url(r'create$', views.createpost),
 ]
