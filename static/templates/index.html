@@ -17,8 +17,8 @@
 
 
     {% block body %}
+    <button><a href="post/create">Create Post</a></button>
       {% for p in posts %}
-      <button><a href="post/create">Create Post</a></button>
       <div class="post">
           <button onclick=upvote({{ p.id }})></button>
           <a href="{{ p.link }}"><h2>{{ p.title }}</h2></a>
