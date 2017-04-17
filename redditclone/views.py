@@ -4,7 +4,7 @@ from post.models import Post
 
 def homepage(request):
     allposts = Post.objects.order_by('-score')
-    context = {"name": "Yoyo",
+    context = {"name": "Geng",
                 "day": "Friday",
                 "posts": allposts}
 
