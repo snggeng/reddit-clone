@@ -14,8 +14,9 @@ from os.path import dirname, abspath, join
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = dirname(dirname(abspath(__file__)))
-STATIC_DIR = join(BASE_DIR, "static")
-TEMPLATE_DIR = join(STATIC_DIR, "templates")
+STATIC_ROOT = join(BASE_DIR, "static")
+TEMPLATE_DIR = join(STATIC_ROOT, "templates")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
