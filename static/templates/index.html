@@ -15,10 +15,11 @@
 
     {% block body %}
       {% for p in posts %}
-        <div class="post">
+      <div class="post">
+          <button onclick=upvote({{ p.id }})></button>
           <a href="{{ p.link }}"><h2>{{ p.title }}</h2></a>
-          <h3>{{ p.score }}</h3>
-        </div>
+          <h3 id="post-score-{{ p.id }}">{{ p.score }}</h3>
+      </div>
       {% endfor %}
     {% endblock %}
   </body>
