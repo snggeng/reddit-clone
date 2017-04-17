@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from django.conf.urls.defaults import *
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
+from django.contrib import admin
+admin.autodiscover()
 import views
 from post import urls as posturls
 
@@ -24,3 +29,5 @@ urlpatterns = [
     url(r'^post/', include(posturls)),
     url(r'^admin/', admin.site.urls),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
